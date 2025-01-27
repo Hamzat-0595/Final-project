@@ -1,0 +1,31 @@
+.footer {
+  width: 1440px;
+  height: 195px;
+  background: linear-gradient(270.7deg, #44403f 0.4%, #211f20 100%);
+  color: white;
+  display: flex;
+  &__btnTop {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+  }
+  &__footer__info {
+    flex-direction: column;
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  h6 {
+    margin-bottom: 7px;
+  }
+  &__btn {
+    width: 621px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23.54px;
+  }
+}
