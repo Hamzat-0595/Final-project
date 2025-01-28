@@ -4,20 +4,33 @@
   background: linear-gradient(270.7deg, #44403f 0.4%, #211f20 100%);
   color: white;
   display: flex;
+  align-items: center;
+
   &__btnTop {
     border-radius: 50%;
     width: 64px;
     height: 64px;
+    margin-left: 40px;
+    margin-right: 50px;
   }
-  &__footer__info {
+
+  &__info {
+    display: flex;
     flex-direction: column;
+    font-family: "Gilroy-Bold", sans-serif;
+    margin-right: 157px;
   }
+
   h2 {
     margin-bottom: 15px;
+    font-family: "Gilroy-Bold", sans-serif;
   }
+
   h6 {
     margin-bottom: 7px;
+    font-family: "Gilroy-Bold", sans-serif;
   }
+
   &__btn {
     width: 621px;
     height: 24px;
