@@ -1,5 +1,13 @@
+import Footer from "../layout/Header/Footer/Footer";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <div>
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default App;
