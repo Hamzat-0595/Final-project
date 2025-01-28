@@ -1,0 +1,86 @@
+.ProductCard {
+  background-color: #504b4a;
+  width: 325px;
+  margin-left: 8px;
+  margin-right: 8px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__Img {
+    width: 325px;
+    height: 227px;
+  }
+  &__wrapperBottom {
+    padding: 15px 16px 18px 20px;
+  }
+
+  &__wrapperName {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__foodName {
+    color: #ffffff;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  &__foodWeight {
+    color: #cfcfcf;
+    font-family: Gilroy;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13.92px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrapperInfo {
+    color: #cfcfcf;
+    font-family: Gilroy;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  &__wrapperOrdener {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__inBascet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 137px;
+    height: 44px;
+    top: 323px;
+    left: 172px;
+    border-radius: 10px;
+    background-color: #618967;
+    color: #ffffff;
+    font-family: Gilroy;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.7px;
+    padding: 0 16px 0 19px;
+  }
+
+  &__price {
+    font-family: Gilroy;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.86px;
+    color: #ffffff;
+  }
+}
