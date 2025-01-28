@@ -1,0 +1,51 @@
+.delivery {
+  margin-top: 50px;
+
+  &__line {
+    width: 4px;
+    height: 33px;
+    background: rgba(97, 137, 103, 1);
+    margin-right: 19px;
+  }
+  h1 {
+    color: white;
+    font-family: "Gilroy-Bold", sans-serif;
+    margin-bottom: 42px;
+  }
+  &__map {
+    width: 639px;
+    height: 610px;
+    margin-left: 20px;
+    &--img {
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+  &__header {
+    display: flex;
+  }
+  &__schedule {
+    width: 580px;
+    height: 71px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  h5 {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 35px;
+  }
+  h4 {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 35px;
+    color: #cfcfcf;
+  }
+  &__bottom {
+    width: 697px;
+    height: 105px;
+    margin-bottom: 100px;
+  }
+}
