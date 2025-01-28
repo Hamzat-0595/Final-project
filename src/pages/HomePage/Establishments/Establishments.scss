@@ -1,0 +1,60 @@
+.Establishments {
+  width: 1440px;
+  background-color: #494544;
+
+  &__container {
+    border-bottom: 1px solid #ffffff33;
+  }
+
+  &__border {
+    max-width: 12px;
+    max-height: 4px;
+    color: #618967;
+    padding-right: 19px;
+  }
+  &__headings {
+    display: flex;
+    color: #ffffff;
+    font-family: Open Sans;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.58px;
+    letter-spacing: 0.03em;
+    height: 44px;
+    margin: 0 0 16px 40px;
+    padding-top: 47px;
+  }
+
+  &__wrapperImg {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__Img {
+    width: 329px;
+    height: 220px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  &__wrapperBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  &__btnMore {
+    background-color: #618967;
+    width: 720px;
+    height: 59px;
+    top: 466px;
+    left: 387px;
+    border-radius: 15px;
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30.26px;
+    color: #ffffff;
+  }
+}
