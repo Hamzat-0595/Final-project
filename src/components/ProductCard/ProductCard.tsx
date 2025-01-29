@@ -12,7 +12,7 @@ const ProductCard = () => {
             <div className="ProductCard__wrapperBottom">
               <div className="ProductCard__wrapperName">
                 <div className="ProductCard__foodName">Ягненок</div>
-                <div className="ProductCard__foodWeight">Вес: 225 г</div>
+                <div className="ProductCard__foodWeight">Вес: {222} г</div>
               </div>
               <div className="ProductCard__wrapperInfo">
                 Фаршированный гречневой кашей,
