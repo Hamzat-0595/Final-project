@@ -4,6 +4,8 @@
 }
 
 body {
+  background: linear-gradient(360deg, #211f20 0%, #44403f 100%);
+=======
   background-color: #000000;
 }
 
