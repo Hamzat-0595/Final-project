@@ -1,0 +1,116 @@
+.Log_In {
+  width: 1440px;
+  height: 1024px;
+  background: linear-gradient(360deg, #211f20 0%, #44403f 100%);
+  padding-top:163px ;
+
+  &__Bloc {
+
+    margin: auto;
+    width: 750px;
+    height: 697px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+    
+  }
+
+  &__Bloc-Action {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__To {
+    margin-top: 128px;
+    width: 141px;
+    font-family: Open Sans;
+    font-size: 40px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+  }
+
+  &__email {
+    margin-right: 225px;
+    margin-top: 60px;
+    width: 197px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    color: #ffffff;
+  }
+
+  &__Login {
+    margin-top: 16px;
+    background: #504b4a;
+    border: 1px solid #706f6f;
+    width: 440px;
+    height: 52px;
+    border-radius: 15px;
+  }
+
+  &__Password-word {
+    margin-right: 345px;
+    margin-top: 32px;
+    width: 82px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    color: #ffffff;
+  }
+
+  &__Password {
+    margin-top: 16px;
+    background: #504b4a;
+    border: 1px solid #706f6f;
+    width: 440px;
+    height: 52px;
+    border-radius: 15px;
+  }
+  &__Button {
+    margin-top: 40px;
+    width: 247px;
+    height: 60px;
+    border-radius: 10px;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    border: none;
+  }
+
+  &__Password-Button {
+    margin-left: 91px;
+    width: 66px;
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    color: #ffffff;
+  }
+  &__No-account-register {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  &__No-account {
+    width: 104px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    color: #ffffff;
+    border: none;
+    background: none;
+  }
+
+  &__register {
+    width: 148px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    color: #ffffff;
+    border: none;
+    background: none;
+  }
+}

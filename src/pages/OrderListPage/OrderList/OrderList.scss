@@ -1,0 +1,33 @@
+.Order {
+  display: flex;
+  flex-direction: column;
+  &__List__of-orders {
+    display: flex;
+  }
+
+  &__List-stripe{
+    width: 7px;
+    height: 40px;
+    background: #618967;    
+  }
+
+  &__List-orders{
+    font-family: Open Sans;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 49.03px;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    
+  }
+
+  &__active-orders{
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    letter-spacing: 0.03em;
+    color: #618967;
+
+  }
+}
