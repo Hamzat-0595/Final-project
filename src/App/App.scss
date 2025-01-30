@@ -1,10 +1,10 @@
-.app__container {
-  max-width: 1277px;
-  margin: 0 auto;
-}
-
 .App {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  background: linear-gradient(360deg, #211f20 0%, #44403f 100%);
+
+  &__container {
+  }
 }

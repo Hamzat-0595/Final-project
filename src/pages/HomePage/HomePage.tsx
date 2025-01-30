@@ -2,10 +2,12 @@ import "./HomePage.scss";
 
 import Establishments from "./Establishments/Establishments";
 import OrderWindow from "./OrderWindow/OrderWindow";
+import Header from "../../layout/Header/Header";
 
 const HomePage = () => {
   return (
     <div className="HomePage">
+      <Header />
       <Establishments />
       <OrderWindow title="Пиццы" />
       <OrderWindow title="Соки" />
