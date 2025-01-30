@@ -7,8 +7,8 @@ export type User = {
   address: string;
   mail: string;
   password: string;
-  role: string;
-  menu: Food[];
+  role?: string;
+  menu?: Food[];
   __v: number;
 };
 

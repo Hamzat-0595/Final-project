@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { User, UserState } from "../../types/types";
-import { registerUser } from "./userAction";
+import { registerClient } from "./userAction";
 import { toast } from "react-toastify";
 
 const initialState: UserState = {
@@ -11,10 +11,10 @@ const initialState: UserState = {
   user: {} as User,
 };
 
-export const postSlice = createSlice({
+export const userSlice = createSlice({
   initialState,
   reducers: {},
-  name: "post",
+  name: "user",
 
   extraReducers: (builder) => {
     //   builder.addCase(getPosts.pending, (state) => {
@@ -30,16 +30,16 @@ export const postSlice = createSlice({
     //   });
 
     builder
-      .addCase(registerUser.pending, (state) => {
+      .addCase(registerClient.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(registerUser.fulfilled, (state, action) => {
+      .addCase(registerClient.fulfilled, (state, action) => {
         state.isLoading = false;
         toast.success(action.payload, {
           autoClose: 3000,
         });
       })
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerClient.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
       });
@@ -70,4 +70,4 @@ export const postSlice = createSlice({
   },
 });
 
-export default postSlice.reducer;
+export default userSlice.reducer;
