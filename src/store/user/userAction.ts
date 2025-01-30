@@ -2,11 +2,12 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService } from "../../api/baseService";
 import { RegisterRequest } from "../../types/types";
 
-export const registerUser = createAsyncThunk<string, RegisterRequest>(
-  "auth/registerUser",
+export const registerClient = createAsyncThunk<string, RegisterRequest>(
+  "auth/registerClient",
   async (user) => {
     try {
-      const response = await baseService.post("/cafe/signup", user);
+      const response = await baseService.post("/client/signup", user);
+      //  await baseService.post("/signin", user);
       return response.data;
     } catch (error) {
       return error;
@@ -14,6 +15,18 @@ export const registerUser = createAsyncThunk<string, RegisterRequest>(
   }
 );
 
+export const registerCafe = createAsyncThunk<string, RegisterRequest>(
+  "auth/registerCafe",
+  async (user) => {
+    try {
+      const response = await baseService.post("/client/signup", user);
+
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
 // export const getPosts = createAsyncThunk("user/getPosts", async () => {
 //   const response = await baseService.get("/posts");
 //   return response.data;
