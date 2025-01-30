@@ -14,8 +14,8 @@ const LogIn = () => {
             <div className="Log_In__Password-Button">Войти</div>
           </button>
           <div className="Log_In__No-account-register">
-            <div className="Log_In__No-account">Нет аккаунта?</div>
-            <div className="Log_In__register">Зарегистрироваться</div>
+            <button className="Log_In__No-account">Нет аккаунта?</button>
+            <button className="Log_In__register">Зарегистрироваться</button>
           </div>
         </div>
       </div>
