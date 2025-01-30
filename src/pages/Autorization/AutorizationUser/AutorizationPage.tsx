@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./AutorizationPage.scss";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { registerClient } from "../../../store/user/userAction";
+import { Link } from "react-router-dom";
 
 // "name": "unicode",
 // "phone": "89009990099",
@@ -35,7 +36,9 @@ const AutorizationPage = () => {
           <button className="AutorizationPage__haveAnAccount">
             Уже есть аккаунт?
           </button>
-          <button className="AutorizationPage__logIn">Войти</button>
+          <button className="AutorizationPage__logIn">
+            <Link to="/signin">Войти</Link>
+          </button>
         </div>
         <div className="AutorizationPage__wrapperBottom">
           <div className="AutorizationPage__anAutorizations">

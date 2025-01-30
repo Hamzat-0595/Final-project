@@ -1,6 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService } from "../../api/baseService";
-import { RegisterRequest } from "../../types/types";
+import { RegisterRequest, User } from "../../types/types";
+import Cookies from "js-cookie";
+
+interface IUserAuth extends User {
+  token: string;
+}
 
 export const registerClient = createAsyncThunk<string, RegisterRequest>(
   "auth/registerClient",
@@ -27,6 +32,16 @@ export const registerCafe = createAsyncThunk<string, RegisterRequest>(
     }
   }
 );
+
+export const authUser = createAsyncThunk(
+  "user/authUser",
+  async (user: { mail: string; password: string }) => {
+    const response = await baseService.post<IUserAuth>("/signin", user);
+    Cookies.set("token", response.data.token);
+    return response.data;
+  }
+);
+
 // export const getPosts = createAsyncThunk("user/getPosts", async () => {
 //   const response = await baseService.get("/posts");
 //   return response.data;

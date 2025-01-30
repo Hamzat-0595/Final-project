@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { User, UserState } from "../../types/types";
-import { registerClient } from "./userAction";
+import { authUser, registerClient } from "./userAction";
 import { toast } from "react-toastify";
 
 const initialState: UserState = {
@@ -42,19 +42,13 @@ export const userSlice = createSlice({
       .addCase(registerClient.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
-      });
+      })
 
-    // builder.addCase(addPost.pending, (state) => {
-    //   state.isLoadingPosts = true;
-    // });
-    // builder.addCase(addPost.fulfilled, (state, action) => {
-    //   state.isLoadingPosts = false;
-    //   state.posts.unshift(action.payload);
-    // });
-    // builder.addCase(addPost.rejected, (state, action) => {
-    //   state.isLoadingPosts = false;
-    //   state.error = action.error.message ?? "";
-    // });
+      .addCase(authUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+        state.isAuth = true;
+      });
 
     // builder.addCase(deletePost.pending, (state) => {
     //   state.isLoadingPosts = true;
