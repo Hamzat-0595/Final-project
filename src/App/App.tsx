@@ -1,23 +1,28 @@
 import { Route, Routes } from "react-router-dom";
-import Footer from "../layout/Footer/Footer";
+
 import HomePage from "../pages/HomePage/HomePage";
 import "./App.scss";
+
 import LogIn from "../pages/login/LogIn";
-import Header from "../layout/Header/Header";
 import OrderListPage from "../pages/OrderListPage/OrderListPage";
+
+import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
+import AutorizationCafe from "../pages/Autorization/AutorizationCafe/AutorizationCafe";
+
 
 function App() {
   return (
     <div className="App">
       <div>
-        <Header />
+
+     
+
         <Routes>
+          <Route path="/client/signup" element={<AutorizationPage />} />
+          <Route path="/cafe/signup" element={<AutorizationCafe />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signin" element={<LogIn />} />
-          <Route path="/orders" element={<OrderListPage />} />
         </Routes>
-        <Footer />
+
       </div>
     </div>
   );
