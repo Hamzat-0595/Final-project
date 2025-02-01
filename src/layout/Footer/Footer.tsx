@@ -1,5 +1,9 @@
 import "./Footer.scss";
 import btnTop from "../../assets/btnTop.svg";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fd0e3fd35cb9b83307116e7c21da88e0dc55bca
 const Footer = () => {
   return (
     <div className="footer">

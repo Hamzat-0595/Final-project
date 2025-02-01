@@ -2,6 +2,10 @@ import "./HomePage.scss";
 
 import Establishments from "./Establishments/Establishments";
 import OrderWindow from "./OrderWindow/OrderWindow";
+<<<<<<< HEAD
+=======
+import Footer from "../../layout/Footer/Footer";
+>>>>>>> 1fd0e3fd35cb9b83307116e7c21da88e0dc55bca
 import Header from "../../layout/Header/Header";
 
 const HomePage = () => {
@@ -18,6 +22,7 @@ const HomePage = () => {
           Показать больше категорий
         </button>
       </div>
+      <Footer />
     </div>
   );
 };
