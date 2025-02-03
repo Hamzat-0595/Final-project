@@ -8,27 +8,32 @@ import OrderListPage from "../pages/OrderListPage/OrderListPage";
 
 import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
 import AutorizationCafe from "../pages/Autorization/AutorizationCafe/AutorizationCafe";
-import { useAppSelector } from "../hooks/hooks";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
-  const { isAuth } = useAppSelector((state) => state.user);
-
   return (
     <div className="App">
       <div>
         <Routes>
-          {!isAuth ? (
-            <>
-              <Route path="/client/signup" element={<AutorizationPage />} />
-              <Route path="/cafe/signup" element={<AutorizationCafe />} />
-              <Route path="/signin" element={<LogIn />} />
-            </>
-          ) : (
-            <>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/orders" element={<OrderListPage />} />
-            </>
-          )}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <ProtectedRoute>
+                <OrderListPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/client/signup" element={<AutorizationPage />} />
+          <Route path="/cafe/signup" element={<AutorizationCafe />} />
+          <Route path="/signin" element={<LogIn />} />
         </Routes>
       </div>
     </div>
