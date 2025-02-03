@@ -1,17 +1,18 @@
-import React from "react";
+import './OrderListItem.scss'
 
 const OrderListItem = () => {
   return (
-    <div className="OrderListItem">
-      <div className="Order__Bloc">
-        <div className="Order__People">Заказ №</div>
-        <div className="Order__Number">65e60364</div>
+    <div className="Orders">
+      <div className="Orders__Bloc">
+        <div className="Orders__People">Заказ №</div>
+        <div className="Orders__Number">65e60364</div>
       </div>
-      <div className="Order__Time">Получен в 12:35 (2 часа назад)</div>
-      <div className="Order__Status">Статус:</div>
-      <div className="Order__Adopted">принят курьером</div>
-      <div className="Order__Prise">777 ₽</div>
-      <button className=""><div className="">x</div></button>
+      <div className="Orders__Time">Получен в 12:35 (2 часа назад)</div>
+      <div className="Orders__Status">Статус: <span className='Orders__Adopted'>принят курьером</span></div>
+      <div className="Orders__Prise">777 ₽</div>
+      <button className="Orders__Button">
+        <div className="Orders__X">x</div>
+      </button>
     </div>
   );
 };
