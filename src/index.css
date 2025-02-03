@@ -4,7 +4,10 @@
 }
 
 body {
-  background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+
+
+  background-color: #000000;
+
 }
 
 @font-face {
