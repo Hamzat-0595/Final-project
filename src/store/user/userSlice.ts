@@ -8,6 +8,7 @@ const initialState: UserState = {
   isAuth: false,
   isLoading: false,
   error: "",
+  token: '',
   user: {} as User,
 };
 
@@ -48,6 +49,7 @@ export const userSlice = createSlice({
         state.isLoading = false;
         state.user = action.payload;
         state.isAuth = true;
+        state.token = action.payload.token
       });
 
     // builder.addCase(deletePost.pending, (state) => {

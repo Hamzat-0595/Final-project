@@ -1,33 +1,43 @@
 import "./HomePage.scss";
 
 import Establishments from "./Establishments/Establishments";
-import OrderWindow from "./OrderWindow/OrderWindow";
 import Footer from "../../layout/Footer/Footer";
 import Header from "../../layout/Header/Header";
-import { useState } from "react";
-import ShowMore from "./ShowMore/ShowMore";
+import {
+  useFetchAllCategorysQuery
+} from "../../store/services/productService";
+import Category from "./Category/Category";
 
 const HomePage = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const { data: categorys } = useFetchAllCategorysQuery("");
+  console.log({
+    categorys,
+  });
 
-  const handleToggle = () => {
-    setIsVisible((prevState) => !prevState);
-  };
+
+  // const [isVisible, setIsVisible] = useState(false);
+
+  // const handleToggle = () => {
+  //   setIsVisible((prevState) => !prevState);
+  // };
 
   return (
     <div className="HomePage">
       <Header />
+      {/* {products.map(product =>
+        <OrderWindow product={product}/>
+      )} */}
+
       <Establishments />
-      <OrderWindow title="Пиццы" />
-      <OrderWindow title="Соки" />
-      <OrderWindow title="Бургеры" />
-      <OrderWindow title="Гарниры" />
-      {isVisible && <ShowMore />}
+      {categorys?.map((category) => (
+        <Category {...category} />
+      ))}
+      {/* {isVisible && <ShowMore />}
       <div className="HomePage__Wrapper">
         <button className="HomePage__ShowMore" onClick={handleToggle}>
           {isVisible ? "Скрыть" : "Показать больше категорий"}
         </button>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

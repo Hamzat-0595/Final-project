@@ -1,4 +1,4 @@
-import OrderWindow from "../OrderWindow/OrderWindow";
+import OrderWindow from "../Category/Category";
 
 const ShowMore = () => {
   return (

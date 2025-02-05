@@ -11,6 +11,9 @@ import AutorizationCafe from "../pages/Autorization/AutorizationCafe/Autorizatio
 import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
+
+
+  
   return (
     <div className="App">
       <div>
