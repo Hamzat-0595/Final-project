@@ -7,7 +7,6 @@ import LogIn from "../pages/Autorization/login/LogIn";
 import OrderListPage from "../pages/OrderListPage/OrderListPage";
 
 import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
-import AutorizationCafe from "../pages/Autorization/AutorizationCafe/AutorizationCafe";
 import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
@@ -46,8 +45,8 @@ function App() {
               }
             />
           </Route>
-          <Route path="/client/signup" element={<AutorizationPage />} />
-          <Route path="/cafe/signup" element={<AutorizationCafe />} />
+          <Route path="/client/signup" element={<AutorizationPage type="client" />} />
+          <Route path="/cafe/signup" element={<AutorizationPage type="cafe" />} />
           <Route path="/signin" element={<LogIn />} />
         </Routes>
       </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./LogIn.scss";
 import { authUser } from "../../../store/user/userAction";
 import { useAppDispatch } from "../../../hooks/hooks";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LogIn = () => {
   const [mail, setMail] = useState("");
@@ -38,8 +38,10 @@ const LogIn = () => {
             <div className="Log_In__Password-Button">Войти</div>
           </button>
           <div className="Log_In__No-account-register">
-            <button className="Log_In__No-account">Нет аккаунта?</button>
-            <button className="Log_In__register">Зарегистрироваться</button>
+            <div className="Log_In__No-account">Нет аккаунта?</div>
+            <Link className="Log_In__register" to="/client/signup">
+              Зарегистрироваться
+            </Link>
           </div>
         </div>
       </div>

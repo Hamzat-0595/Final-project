@@ -31,11 +31,20 @@ export type Food = {
   __v: number;
 };
 
+export enum RegisterRequestCredentials {
+  name = "name",
+  phone = "phone",
+  city = "city",
+  address = "address",
+  mail = "mail",
+  password = "password",
+}
+
 export type RegisterRequest = {
-  name: string;
-  phone: string;
-  city: string;
-  address: string;
-  mail: string;
-  password: string;
+  [RegisterRequestCredentials.name]: string;
+  [RegisterRequestCredentials.phone]: string;
+  [RegisterRequestCredentials.city]: string;
+  [RegisterRequestCredentials.address]: string;
+  [RegisterRequestCredentials.mail]: string;
+  [RegisterRequestCredentials.password]: string;
 };
