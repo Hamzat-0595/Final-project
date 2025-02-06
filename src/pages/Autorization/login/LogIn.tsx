@@ -11,8 +11,8 @@ const LogIn = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    dispatch(authUser({ mail, password }));
+  const handleClick = async () => {
+    await dispatch(authUser({ mail, password }));
     navigate("/");
   };
 

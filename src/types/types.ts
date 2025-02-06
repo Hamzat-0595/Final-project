@@ -15,6 +15,7 @@ export type User = {
 export type UserState = {
   user: User;
   error: string;
+  token: string;
   isAuth: boolean;
   isLoading: boolean;
 };

@@ -5,17 +5,28 @@ import {
   configureStore,
 } from "@reduxjs/toolkit";
 
+import { productAPI } from "./services/productService";
 import userSlice from "./user/userSlice";
 
-const rootReduser = combineReducers({
+const rootReducer = combineReducers({
   user: userSlice,
+  [productAPI.reducerPath]: productAPI.reducer,
 });
+export const setupStore = () => {
+  return configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(productAPI.middleware),
+  });
+};
 export const store = configureStore({
-  reducer: rootReduser,
-  devTools: true,
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(productAPI.middleware),
 });
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = ReturnType<typeof setupStore>;
 
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
