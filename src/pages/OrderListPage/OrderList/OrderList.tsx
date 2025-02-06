@@ -3,17 +3,18 @@ import "./OrderList.scss";
 
 const OrderList = () => {
   return (
-    <div>
-      <div className="Order__List">
-        <div className="Order__List__of-orders">
-          <div className="Order__List-stripe"></div>
-          <div className="Order__List-orders">Список заказов</div>
-          <div className="Order__active-orders">
-            (количество активных заказов: 1)
-          </div>
+    <div className="OrderList">
+      <div className="OrderList__orders">
+        <div className="OrderList__stripe"></div>
+        <div>Список заказов</div>
+        <div className="OrderList__active-orders">
+          (количество активных заказов: 1)
         </div>
-        <div className=""><OrderListItem/></div>
       </div>
+      <OrderListItem />
+      <OrderListItem />
+      <OrderListItem />
+      <OrderListItem />
     </div>
   );
 };
