@@ -17,37 +17,29 @@
     display: flex;
     justify-content: center;
     margin-top: 11px;
+    gap: 6px;
   }
 
-  &__customer {
-    margin-right: 6px;
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 224px;
     height: 85px;
-    top: 148px;
-    left: 492px;
     border-radius: 10px;
-    border: 1px solid #618967;
-    background-color: #618967;
     color: #ffffff;
     font-family: Inter;
     font-size: 22px;
     font-weight: 600;
     line-height: 26.63px;
-  }
-
-  &__partner {
-    width: 224px;
-    height: 85px;
-    top: 148px;
-    left: 492px;
-    border-radius: 10px;
     border: 1px solid #618967;
     background-color: #618967;
-    color: #ffffff;
-    font-family: Inter;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 26.63px;
+    text-decoration: none;
+  }
+
+  &__link.active {
+    border: 1px solid #618967;
+    background-color: #494544;
   }
 
   &__haveAnAccount {
@@ -69,6 +61,7 @@
     background: none;
     border: none;
     color: #ffffff;
+    text-decoration: none;
   }
 
   &__wrapperBottom {
@@ -105,6 +98,12 @@
     border-radius: 15px;
     border: 1px solid #706f6f;
     background-color: #706f6f;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    color: #ffffff;
+    padding-left: 10px;
   }
 
   &__registration {
