@@ -1,4 +1,3 @@
-import Rectangle from "../../assets/Rectangle 314.png";
 import Bascet from "../../assets/Buy.png";
 import "./ProductCard.scss";
 import { IProduct } from "../../models/IProduct";
@@ -15,9 +14,7 @@ const ProductCard = ({ name, image, price, info }: IProduct) => {
                 <div className="ProductCard__foodName">{name}</div>
                 <div className="ProductCard__foodWeight">Вес: {222} г</div>
               </div>
-              <div className="ProductCard__wrapperInfo">
-                {info}
-              </div>
+              <div className="ProductCard__wrapperInfo">{info}</div>
               <div className="ProductCard__wrapperOrdener">
                 <div className="ProductCard__price">{price} ₽</div>
                 <button className="ProductCard__inBascet">

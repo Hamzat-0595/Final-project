@@ -9,31 +9,43 @@ import OrderListPage from "../pages/OrderListPage/OrderListPage";
 import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
 import AutorizationCafe from "../pages/Autorization/AutorizationCafe/AutorizationCafe";
 import ProtectedRoute from "./ProtectedRoute";
+import MenuPage from "../pages/MenuPage/MenuPage";
+import Layout from "../layout/Layout";
+import AccountLayout from "../layout/AccountLayout/AccountLayout";
 
 function App() {
-
-
-  
   return (
     <div className="App">
       <div>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <HomePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/orders"
-            element={
-              <ProtectedRoute>
+          <Route path="/" element={<Layout />}>
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <HomePage />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
+          <Route path="/account/" element={<AccountLayout />}>
+            <Route
+              path="orders"
+              element={
+                // <ProtectedRoute>
                 <OrderListPage />
-              </ProtectedRoute>
-            }
-          />
+                // </ProtectedRoute>
+              }
+            />
+            <Route
+              path="menu"
+              element={
+                // <ProtectedRoute>
+                <MenuPage />
+                // </ProtectedRoute>
+              }
+            />
+          </Route>
           <Route path="/client/signup" element={<AutorizationPage />} />
           <Route path="/cafe/signup" element={<AutorizationCafe />} />
           <Route path="/signin" element={<LogIn />} />
