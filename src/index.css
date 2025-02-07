@@ -9,6 +9,13 @@ body {
   min-width: 100%;
 }
 
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
+  color: white;
+}
+
 @font-face {
   font-family: "Gilroy-Bold";
   src: local("Gilroy-Bold"),
