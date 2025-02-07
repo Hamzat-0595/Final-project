@@ -1,0 +1,22 @@
+.CustomButton {
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.filled {
+    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    color: #ffffff;
+  }
+  &.outlined {
+    background: none;
+    border: solid 1px #618967;
+  }
+  &.text {
+    background: none;
+    border: none;
+  }
+}

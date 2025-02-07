@@ -13,6 +13,8 @@ import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
 
 function App() {
+
+
   return (
     <div className="App">
       <div>
@@ -43,13 +45,15 @@ function App() {
                 <MenuPage />
                 // </ProtectedRoute>
               }
-            />
+              />
           </Route>
           <Route path="/client/signup" element={<AutorizationPage type="client" />} />
           <Route path="/cafe/signup" element={<AutorizationPage type="cafe" />} />
           <Route path="/signin" element={<LogIn />} />
         </Routes>
+        
       </div>
+
     </div>
   );
 }
