@@ -1,4 +1,5 @@
 import Rectangle from "../../../assets/Rectangle 314.png";
+import { Button } from "../../../components/Button/Button";
 
 import "./Establishments.scss";
 
@@ -17,7 +18,7 @@ const Establishments = () => {
           <img src={Rectangle} alt="" className="Establishments__Img" />
         </div>
         <div className="Establishments__wrapperBtn">
-          <button className="Establishments__btnMore">Показать больше</button>
+          <Button className="Establishments__btnMore">Показать больше</Button>
         </div>
       </div>
     </div>

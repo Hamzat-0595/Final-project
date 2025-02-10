@@ -9,21 +9,13 @@
     background-color: #555;
   }
   &__collapsible {
-    display: flex;
-    justify-content: space-between;
     width: 618px;
     height: 68px;
-    border-radius: 10px 10px 10px 10px;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
     margin-bottom: 10px;
-    cursor: pointer;
-    border: none;
     font-family: "Gilroy-Bold", sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 35px;
-    align-items: center;
-    padding-left: 30px;
   }
   &__mid {
     display: flex;

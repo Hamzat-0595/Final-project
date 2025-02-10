@@ -24,7 +24,6 @@
   }
 
   &__Number {
- 
     font-weight: 600;
     line-height: 35.41px;
     letter-spacing: 0.03em;
@@ -70,12 +69,10 @@
 
   &__Button {
     margin-right: 24px;
-    border: none;
-    background: none;
+
     width: 32px;
     height: 32px;
     border-radius: 15px;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
   }
 
   &__X {

@@ -1,35 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { User, UserState } from "../../types/types";
-import { authUser, registerClient } from "./userAction";
+import { authUser, checkAuthUser, registerClient } from "./userAction";
 import { toast } from "react-toastify";
 
 const initialState: UserState = {
   isAuth: false,
-  isLoading: false,
+  isLoading: true,
   error: "",
-  token: '',
+  token: "",
   user: {} as User,
 };
-
 export const userSlice = createSlice({
   initialState,
-  reducers: {},
+
   name: "user",
+  reducers: {
+    logoutReduser: (state) => {
+      state.user = {} as UserState["user"];
+      state.isLoading = false;
+      state.isAuth = false;
+    },
+  },
 
   extraReducers: (builder) => {
-    //   builder.addCase(getPosts.pending, (state) => {
-    //     state.isLoadingPosts = true;
-    //   });
-    //   builder.addCase(getPosts.fulfilled, (state, action) => {
-    //     state.isLoadingPosts = false;
-    //     state.posts = action.payload;
-    //   });
-    //   builder.addCase(getPosts.rejected, (state, action) => {
-    //     state.isLoadingPosts = false;
-    //     state.error = action.error.message ?? "";
-    //   });
-
     builder
       .addCase(registerClient.pending, (state) => {
         state.isLoading = true;
@@ -44,26 +38,29 @@ export const userSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-
       .addCase(authUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
         state.isAuth = true;
-        state.token = action.payload.token
+        state.token = action.payload.token;
       });
 
-    // builder.addCase(deletePost.pending, (state) => {
-    //   state.isLoadingPosts = true;
-    // });
-    // builder.addCase(deletePost.fulfilled, (state, action) => {
-    //   state.posts = state.posts.filter((post) => post._id !== action.payload);
-    //   state.isLoadingPosts = false;
-    // });
-    // builder.addCase(deletePost.rejected, (state, action) => {
-    //   state.isLoadingPosts = false;
-    //   state.error = action.error.message ?? "";
-    // });
+    builder.addCase(checkAuthUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(checkAuthUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isAuth = true;
+      state.user = action.payload;
+    });
+    builder.addCase(checkAuthUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isAuth = false;
+      state.error = action.payload as string;
+    });
   },
 });
+
+export const { logoutReduser } = userSlice.actions;
 
 export default userSlice.reducer;
