@@ -2,8 +2,42 @@ import Bascet from "../../assets/Buy.png";
 import "./ProductCard.scss";
 import { IProduct } from "../../models/IProduct";
 import { Button } from "../Button/Button";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/services/cartBasket/cartSlice";
 
-const ProductCard = ({ name, image, price, info }: IProduct) => {
+interface ProductCardProps extends IProduct {
+  onAddToCart?: (productId: number) => void; // Дополнительное свойство
+  isOnSale?: boolean; // Дополнительное свойст
+}
+
+const ProductCard = ({
+  name,
+  image,
+  price,
+  info,
+  _id,
+  categoryId,
+  cafeId,
+  __v,
+}: ProductCardProps) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        _id,
+        name,
+        image,
+        price,
+        info,
+        categoryId,
+        cafeId,
+        __v,
+        quantity: 1, // Начальное количество
+      })
+    );
+  };
+
   return (
     <div className="ProductCard">
       <div className="ProductCard__containerPage">

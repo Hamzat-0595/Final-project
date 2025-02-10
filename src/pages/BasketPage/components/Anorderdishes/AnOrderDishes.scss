@@ -1,0 +1,153 @@
+.anOrderDishes {
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  border-radius: 10px;
+  width: 1077px;
+  height: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 19px;
+  margin-bottom: 10px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 1096px;
+  }
+
+  &__map {
+    width: 117px;
+    height: 86px;
+  }
+
+  &__data--ul {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.76px;
+    color: white;
+    font-family: "Gilroy-Bold", sans-serif;
+  }
+
+  &__data--li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13.92px;
+    font-family: "Gilroy-Bold", sans-serif;
+    list-style-type: none;
+    color: rgba(166, 167, 171, 1);
+    margin-top: 5px;
+  }
+  &__data {
+    margin-left: 39px;
+    width: 260px;
+  }
+  &__quantity {
+    display: flex;
+    align-items: center;
+    margin-left: 140px;
+    color: white;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 10px;
+    position: relative;
+  }
+  &__quantity--button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-bottom: 7px;
+  }
+  &__quantity--plus {
+    width: 26.97px;
+    height: 26.97px;
+    background-color: rgba(114, 164, 121, 1);
+    border-radius: 50%;
+  }
+
+  &____cancellation--plus {
+    width: 26.97px;
+    height: 26.97px;
+    background-color: rgba(114, 164, 121, 1);
+    border-radius: 50%;
+  }
+
+  &__quantity--minus {
+    width: 26.97px;
+    height: 26.97px;
+    background-color: rgba(114, 164, 121, 1);
+    border-radius: 50%;
+  }
+  &__quantity--minusImg {
+    height: 2.6px;
+    width: 12px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-left: 7px;
+    position: relative;
+    top: 12px;
+  }
+  &__quantity--plusImg {
+    height: 2.06px;
+    width: 12px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 14px;
+    margin-left: 7px;
+    position: relative;
+    top: 13px;
+  }
+
+  &__cancellation--plusImg {
+    height: 2.06px;
+    width: 12px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 14px;
+    margin-left: 7px;
+    position: relative;
+    top: 13px;
+  }
+  &__quantity--plusImgg {
+    height: 12px;
+    width: 2.6px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 12px;
+    position: relative;
+    bottom: 6.66px;
+    top: 6px;
+  }
+  &__cancellation--plus {
+    position: relative;
+    bottom: 15px;
+  }
+
+  &__cancellation--plusImgg {
+    height: 12px;
+    width: 2.6px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 12px;
+    position: relative;
+
+    top: 6px;
+  }
+
+  &__price {
+    color: white;
+    font-family: "Gilroy-Bold", sans-serif;
+    margin-left: 250px;
+    margin-right: 76px;
+  }
+  &__cancellation--button {
+    background: rgba(114, 164, 121, 1);
+    border-radius: 50%;
+    width: 26.97px;
+    height: 26.97px;
+    border: none;
+    position: relative;
+    top: 7px;
+    transform: rotate(45deg);
+  }
+}
