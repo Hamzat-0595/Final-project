@@ -4,7 +4,7 @@
   height: 99px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #FFFFFF1A;
+  border-bottom: 1px solid #ffffff1a;
 
   &__Name-input {
     display: flex;
@@ -91,7 +91,8 @@
     background: #635c5a;
   }
   &__Log-in {
-    // margin-top: 38px;
+    background: none;
+    border: none;
     margin-right: 36px;
     width: 51px;
     font-family: Gilroy;
@@ -99,6 +100,7 @@
     font-weight: 500;
     line-height: 21.19px;
     color: #ffffff;
+    cursor: pointer;
   }
   &__basket {
     margin-right: 70px;
