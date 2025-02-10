@@ -11,10 +11,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
+import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
 
 function App() {
-
-
   return (
     <div className="App">
       <div>
@@ -45,15 +44,27 @@ function App() {
                 <MenuPage />
                 // </ProtectedRoute>
               }
-              />
+            />
+            <Route
+              path="information"
+              element={
+                // <ProtectedRoute>
+                <AccountnIformation />
+                // </ProtectedRoute>
+              }
+            />
           </Route>
-          <Route path="/client/signup" element={<AutorizationPage type="client" />} />
-          <Route path="/cafe/signup" element={<AutorizationPage type="cafe" />} />
+          <Route
+            path="/client/signup"
+            element={<AutorizationPage type="client" />}
+          />
+          <Route
+            path="/cafe/signup"
+            element={<AutorizationPage type="cafe" />}
+          />
           <Route path="/signin" element={<LogIn />} />
         </Routes>
-        
       </div>
-
     </div>
   );
 }
