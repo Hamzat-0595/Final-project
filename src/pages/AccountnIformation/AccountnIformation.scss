@@ -1,0 +1,36 @@
+.AccountnIformation {
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  width: 844px;
+  height: 697px;
+  border-radius: 20px;
+  font-family: Open Sans;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 29.96px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  &__form {
+    gap: 60px;
+    padding-top: 45px;
+    padding-left: 32px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 73px;
+    justify-content: space-between;
+    height: 420px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+  }
+
+  &__input {
+    width: 382px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+}

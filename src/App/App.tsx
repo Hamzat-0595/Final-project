@@ -10,6 +10,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
+import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
 
 function App() {
   return (
@@ -43,6 +44,16 @@ function App() {
                 // </ProtectedRoute>
               }
             />
+
+            <Route
+              path="information"
+              element={
+                // <ProtectedRoute>
+                <AccountnIformation />
+                // </ProtectedRoute>
+              }
+            />
+
           </Route>
           <Route
             path="/client/signup"
