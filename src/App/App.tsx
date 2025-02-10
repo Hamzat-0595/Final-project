@@ -14,6 +14,7 @@ import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
 import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
+import ProductPage from "../pages/ProductPage/ProductPage";
 
 function App() {
   return (
