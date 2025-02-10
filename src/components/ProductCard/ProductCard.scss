@@ -3,6 +3,7 @@
   width: 325px;
   margin-left: 8px;
   margin-right: 8px;
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -15,6 +16,8 @@
   }
   &__wrapperBottom {
     padding: 15px 16px 18px 20px;
+    display: inline-block;
+    vertical-align: bottom;
   }
 
   &__wrapperName {
@@ -56,24 +59,20 @@
   &__wrapperOrdener {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__inBascet {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 137px;
     height: 44px;
-    top: 323px;
-    left: 172px;
-    border-radius: 10px;
-    background-color: #618967;
-    color: #ffffff;
     font-family: Gilroy;
     font-size: 14px;
     font-weight: 600;
     line-height: 16.7px;
-    padding: 0 16px 0 19px;
+  }
+
+  &__bascetText {
+    margin-right: 12px;
   }
 
   &__price {

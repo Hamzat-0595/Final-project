@@ -5,6 +5,7 @@ import { registerClient } from "../../../store/user/userAction";
 import { Link, NavLink } from "react-router-dom";
 import { RegisterRequest } from "../../../types/types";
 import { getUserCredentials } from "./helpers";
+import { Button } from "../../../components/Button/Button";
 
 interface IAutorizationPage {
   type: "cafe" | "client";
@@ -59,12 +60,12 @@ const AutorizationPage = ({ type }: IAutorizationPage) => {
               />
             </div>
           ))}
-          <button
+          <Button
             className="AutorizationPage__registration"
             onClick={handleClick}
           >
             Регистрация
-          </button>
+          </Button>
         </div>
       </div>
     </div>

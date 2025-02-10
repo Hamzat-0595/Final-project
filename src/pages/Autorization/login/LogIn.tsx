@@ -3,6 +3,7 @@ import "./LogIn.scss";
 import { authUser } from "../../../store/user/userAction";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../../../components/Button/Button";
 
 const LogIn = () => {
   const [mail, setMail] = useState("");
@@ -34,9 +35,9 @@ const LogIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="Log_In__Button" onClick={handleClick}>
-            <div className="Log_In__Password-Button">Войти</div>
-          </button>
+          <Button className="Log_In__Button" onClick={handleClick}>
+            Войти
+          </Button>
           <div className="Log_In__No-account-register">
             <div className="Log_In__No-account">Нет аккаунта?</div>
             <Link className="Log_In__register" to="/client/signup">
