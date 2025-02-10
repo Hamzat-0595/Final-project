@@ -2,16 +2,14 @@
   width: 1440px;
   height: 1024px;
   background: linear-gradient(360deg, #211f20 0%, #44403f 100%);
-  padding-top:163px ;
+  padding-top: 163px;
 
   &__Bloc {
-
     margin: auto;
     width: 750px;
     height: 697px;
     border-radius: 20px;
     background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
-    
   }
 
   &__Bloc-Action {
@@ -48,6 +46,12 @@
     width: 440px;
     height: 52px;
     border-radius: 15px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    color: #ffffff;
+    padding-left: 10px;
   }
 
   &__Password-word {
@@ -68,6 +72,12 @@
     width: 440px;
     height: 52px;
     border-radius: 15px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    color: #ffffff;
+    padding-left: 10px;
   }
   &__Button {
     margin-top: 40px;
@@ -112,5 +122,6 @@
     color: #ffffff;
     border: none;
     background: none;
+    text-decoration: none;
   }
 }

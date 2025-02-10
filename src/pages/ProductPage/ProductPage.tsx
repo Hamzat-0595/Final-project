@@ -1,6 +1,5 @@
 import "./ProductPage.scss";
 import shopping from "../../assets/shopping-bag.svg";
-import OrderWindow from "../HomePage/OrderWindow/OrderWindow";
 
 const ProductPage = () => {
   return (
@@ -47,8 +46,6 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-
-      <OrderWindow title="Пиццы" />
     </div>
   );
 };

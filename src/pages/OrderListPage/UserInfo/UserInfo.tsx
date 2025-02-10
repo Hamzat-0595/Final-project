@@ -1,21 +1,44 @@
-import './UserInfo.scss'
-import img from '../../../assets/Rectangle 314.png'
+import "./UserInfo.scss";
+import img from "../../../assets/Rectangle 314.png";
+import {
+  Button,
+  ButtonTypes,
+  ButtonVariables,
+} from "../../../components/Button/Button";
+
 const UserInfo = () => {
   return (
     <div>
-     <div className="User__Action">
+      <div className="User">
         <img className="User__img" src={img} />
-        <button className="User__Button_Name">Кофетун</button>
-        <button className="User__Button-Bloc">
-          <div className="User__Button-Buy">Заказы</div>
-        </button>
-        <button className="User__Button-Meny">Меню</button>
-        <button className="User__Button-Information">
+        <div className="User__Button-Name">Кофетун</div>
+        <Button
+          buttonType={ButtonTypes.link}
+          activeVariant={ButtonVariables.text}
+          to={"/account/orders"}
+          className="User__Button"
+        >
+          Заказы
+        </Button>
+        <Button
+          buttonType={ButtonTypes.link}
+          activeVariant={ButtonVariables.text}
+          to={"/account/menu"}
+          className="User__Button"
+        >
+          Меню
+        </Button>
+        <Button
+          buttonType={ButtonTypes.link}
+          activeVariant={ButtonVariables.text}
+          to={"/account/information"}
+          className="User__Button"
+        >
           Информация о расторане
-        </button>
+        </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserInfo
+export default UserInfo;

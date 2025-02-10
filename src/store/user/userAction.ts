@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService } from "../../api/baseService";
-import { RegisterRequest, User } from "../../types/types";
+import { OrderForm, RegisterRequest, User } from "../../types/types";
 import Cookies from "js-cookie";
 
 interface IUserAuth extends User {
@@ -12,23 +12,22 @@ export const registerClient = createAsyncThunk<string, RegisterRequest>(
   async (user) => {
     try {
       const response = await baseService.post("/client/signup", user);
-      //  await baseService.post("/signin", user);
       return response.data;
     } catch (error) {
       return error;
     }
   }
 );
-
-export const registerCafe = createAsyncThunk<string, RegisterRequest>(
-  "auth/registerCafe",
-  async (user) => {
+export const order = createAsyncThunk<string, OrderForm>(
+  "post/orders",
+  async (user, { rejectWithValue }) => {
     try {
-      const response = await baseService.post("/client/signup", user);
-
+      const response = await baseService.post("/orders", user);
       return response.data;
     } catch (error) {
-      return error;
+      if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
     }
   }
 );
@@ -37,30 +36,8 @@ export const authUser = createAsyncThunk(
   "user/authUser",
   async (user: { mail: string; password: string }) => {
     const response = await baseService.post<IUserAuth>("/signin", user);
-    Cookies.set("token", response.data.token);
+    Cookies.set("token", response.data.token, { expires: 7, path: "/", secure: true ,sameSite: "Strict"});
+
     return response.data;
   }
 );
-
-// export const getPosts = createAsyncThunk("user/getPosts", async () => {
-//   const response = await baseService.get("/posts");
-//   return response.data;
-// });
-
-// export const addPost = createAsyncThunk<IPost, Pick<IPost, "description">>(
-//   "users/addPosts",
-//   async (arg) => {
-//     const response = await baseService.post("/posts", {
-//       description: arg.description,
-//     });
-//     return response.data;
-//   }
-// );
-
-// export const deletePost = createAsyncThunk<string, Pick<IPost, "_id">>(
-//   "users/deletePost",
-//   async (arg) => {
-//     await baseService.delete(`/posts/${arg._id}`);
-//     return arg._id;
-//   }
-// );

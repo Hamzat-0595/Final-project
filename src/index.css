@@ -4,14 +4,16 @@
 }
 
 body {
-<<<<<<< HEAD
-  background-color: #000000;
-=======
+  background: linear-gradient(360deg, #211f20 0%, #44403f 100%);
+  min-height: 100vh;
+  min-width: 100%;
+}
 
-
-  background-color: #000000;
-
->>>>>>> 1fd0e3fd35cb9b83307116e7c21da88e0dc55bca
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
+  color: white;
 }
 
 @font-face {

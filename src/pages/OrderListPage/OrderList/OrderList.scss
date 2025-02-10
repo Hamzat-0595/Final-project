@@ -1,33 +1,38 @@
-.Order {
+.OrderList {
   display: flex;
   flex-direction: column;
-  &__List__of-orders {
+  gap: 1rem;
+  flex: 1;
+
+  &__orders {
     display: flex;
+    margin: 50px 0;
   }
 
-  &__List-stripe{
+  &__stripe {
+    margin-right: 19px;
     width: 7px;
     height: 40px;
-    background: #618967;    
+    background: #618967;
   }
 
-  &__List-orders{
+  &__orders {
     font-family: Open Sans;
     font-size: 36px;
     font-weight: 700;
     line-height: 49.03px;
     letter-spacing: 0.03em;
     color: #ffffff;
-    
   }
 
-  &__active-orders{
+  &__active-orders {
+    padding-top: 20px;
+    margin-left: 9px;
     font-family: Open Sans;
     font-size: 16px;
     font-weight: 700;
     line-height: 21.79px;
     letter-spacing: 0.03em;
     color: #618967;
-
   }
 }

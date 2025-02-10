@@ -2,102 +2,63 @@ import { useState } from "react";
 import "./AutorizationPage.scss";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { registerClient } from "../../../store/user/userAction";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { RegisterRequest } from "../../../types/types";
+import { getUserCredentials } from "./helpers";
 
-// "name": "unicode",
-// "phone": "89009990099",
-// "city":"Grozny",
-// "address": "none",
-// "mail": "none",
-// "password": "unicode123"
+interface IAutorizationPage {
+  type: "cafe" | "client";
+}
 
-const AutorizationPage = () => {
+const AutorizationPage = ({ type }: IAutorizationPage) => {
   const dispatch = useAppDispatch();
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [city, setCity] = useState("");
-  const [address, setAddress] = useState("");
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({} as RegisterRequest);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = e.target;
+    setUserData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleClick = () => {
-    dispatch(registerClient({ name, phone, city, address, mail, password }));
+    dispatch(registerClient(userData));
   };
 
   return (
     <div className="AutorizationPage">
       <div className="AutorizationPage__container">
         <div className="AutorizationPage__wrapper">
-          <button className="AutorizationPage__customer">Стать клиентом</button>
-          <button className="AutorizationPage__partner">Для ресторана</button>
+          <NavLink className="AutorizationPage__link" to="/client/signup">
+            Стать клиентом
+          </NavLink>
+          <NavLink className="AutorizationPage__link" to="/cafe/signup">
+            Для ресторана
+          </NavLink>
         </div>
         <div className="AutorizationPage__wrapper">
-          <button className="AutorizationPage__haveAnAccount">
+          <div className="AutorizationPage__haveAnAccount">
             Уже есть аккаунт?
-          </button>
-          <button className="AutorizationPage__logIn">
-            <Link to="/signin">Войти</Link>
-          </button>
+          </div>
+          <Link className="AutorizationPage__logIn" to="/signin">
+            Войти
+          </Link>
         </div>
         <div className="AutorizationPage__wrapperBottom">
           <div className="AutorizationPage__anAutorizations">
-            Зарегистрироваться
+            {type === "cafe" ? "Стать партнером" : "Зарегистрироваться"}
           </div>
-          <div className="AutorizationPage__nameWrapper">
-            <div className="AutorizationPage__title">Имя</div>
-            <input
-              type="text"
-              className="AutorizationPage__Input"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="AutorizationPage__numberPhoneWrapper">
-            <div className="AutorizationPage__title">Номер телефона</div>
-            <input
-              type="text"
-              className="AutorizationPage__Input"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div className="AutorizationPage__citiWrapper">
-            <div className="AutorizationPage__title">Город</div>
-            <input
-              type="text"
-              className="AutorizationPage__Input"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-          </div>
-          <div className="AutorizationPage__addressWrapper">
-            <div className="AutorizationPage__title">Адрес</div>
-            <input
-              type="text"
-              className="AutorizationPage__Input"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-          <div className="AutorizationPage__emailWrapper">
-            <div className="AutorizationPage__title">Электронная почта</div>
-            <input
-              type="text"
-              className="AutorizationPage__Input"
-              value={mail}
-              onChange={(e) => setMail(e.target.value)}
-            />
-          </div>
-          <div className="AutorizationPage__passwordWrapper">
-            <div className="AutorizationPage__title">Пароль</div>
-            <input
-              type="password"
-              className="AutorizationPage__Input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+          {getUserCredentials(type).map(({ label, name, type = "text" }) => (
+            <div className="AutorizationPage__nameWrapper">
+              <div className="AutorizationPage__title">{label}</div>
+              <input
+                type={type}
+                className="AutorizationPage__Input"
+                name={name}
+                value={userData[name]}
+                onChange={handleChange}
+              />
+            </div>
+          ))}
           <button
             className="AutorizationPage__registration"
             onClick={handleClick}

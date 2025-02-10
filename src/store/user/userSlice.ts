@@ -8,6 +8,7 @@ const initialState: UserState = {
   isAuth: false,
   isLoading: false,
   error: "",
+  token: "",
   user: {} as User,
 };
 
@@ -42,12 +43,16 @@ export const userSlice = createSlice({
       .addCase(registerClient.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
+        toast.error(action.error.message, {
+          autoClose: 3000,
+        });
       })
 
       .addCase(authUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
         state.isAuth = true;
+        state.token = action.payload.token;
       });
 
     // builder.addCase(deletePost.pending, (state) => {

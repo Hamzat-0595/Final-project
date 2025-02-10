@@ -104,7 +104,6 @@
   }
   &__delivery {
     width: 800px;
-    height: 456px;
     border-radius: 10px;
     color: white;
     margin-top: 22px;
@@ -122,28 +121,24 @@
   &__delivery--del {
     width: 181px;
     height: 60px;
-    cursor: pointer;
     font-weight: 700;
     font-size: 16px;
     color: white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
-    border: 1px solid #72a479;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     font-family: "Gilroy-Bold", sans-serif;
   }
   &__delivery--pickup {
     width: 181px;
     height: 60px;
     font-weight: 700;
-    cursor: pointer;
     font-size: 16px;
     border: none;
     color: white;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     font-family: "Gilroy-Bold", sans-serif;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    margin-right: 20px;
   }
   &__content {
     background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
@@ -174,105 +169,53 @@
     margin-left: 30px;
   }
   &__content--choiceOf {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
     width: 363px;
     height: 60px;
     margin-left: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
-    padding-left: 30px;
   }
   &__delivery--btn {
     font-weight: 500;
     font-family: "Gilroy-Bold", sans-serif;
     font-size: 16px;
-    margin-bottom: 30px;
     margin-left: 30px;
+    align-items: center;
+    display: flex;
   }
   &__delivery--inputs {
     margin-bottom: 15px;
   }
   &__delivery--street {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
+    margin-left: 30px;
     width: 413px;
     height: 60px;
-    margin-left: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
-    padding-left: 30px;
   }
   &__delivery--numHome {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
     width: 150px;
     height: 60px;
     margin-left: 15px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
-    padding-left: 30px;
   }
   &__delivery--numFlat {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
-    width: 200px;
+    width: 210px;
     height: 60px;
     margin-left: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
-    padding-left: 30px;
   }
   &__delivery--entrance {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
     width: 173px;
     height: 60px;
     margin-left: 15px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
     padding-left: 15px;
   }
   &__delivery--floor {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
-    width: 173px;
+    width: 163px;
     height: 60px;
     margin-left: 15px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
+
     padding-left: 15px;
   }
   &__delivery--comment {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: none;
-    border-radius: 10px;
     width: 610px;
     height: 60px;
     margin-left: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Gilroy-Bold", sans-serif;
-    color: white;
-    padding-left: 30px;
   }
   &__pay {
     width: 800px;
@@ -293,20 +236,21 @@
   }
   &__pay--card {
     margin-left: 20px;
+    border-radius: 10px 0 0 10px;
+
     width: 184px;
     height: 60px;
     font-weight: 700;
     font-size: 16px;
     border: none;
     color: white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
     font-family: "Gilroy-Bold", sans-serif;
     background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
   }
   &__pay--cardK {
     width: 184px;
     height: 60px;
+    border-radius: 0;
     font-weight: 700;
     font-size: 16px;
     border: none;
@@ -321,8 +265,7 @@
     font-size: 16px;
     border: none;
     color: white;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0 10px 10px 0;
     font-family: "Gilroy-Bold", sans-serif;
     background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
   }
@@ -351,32 +294,24 @@
     margin-bottom: 31px;
     margin-left: 30px;
   }
+  &__pay-buttons {
+    display: flex;
+  }
   &__whenDelivery--soon {
     width: 184px;
     height: 60px;
+    margin-left: 20px;
     font-weight: 700;
     font-size: 16px;
-    cursor: pointer;
-    border: none;
-    color: white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin-left: 20px;
     font-family: "Gilroy-Bold", sans-serif;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    border-radius: 10px 0 0 10px;
   }
   &__whenDelivery--byTime {
     width: 184px;
     height: 60px;
-    cursor: pointer;
     font-weight: 700;
     font-size: 16px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: none;
-    color: white;
-    font-family: "Gilroy-Bold", sans-serif;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    border-radius: 0 10px 10px 0;
   }
   &__whenDelivery--indicate {
     width: 184px;
@@ -406,24 +341,19 @@
     color: white;
     border-radius: 10px;
     font-family: "Gilroy-Bold", sans-serif;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
   }
-  &__whenDelivery--increment {
-    border: none;
-    padding-bottom: 5px;
-    color: white;
-    font-size: 40px;
-    font-weight: 500;
-    background: none;
+  .placingAnOrder__whenDelivery--increment,
+  .placingAnOrder__whenDelivery--decrement {
+    padding: 5px 10px;
+    font-size: 20px;
     cursor: pointer;
+    border: none;
+    background: none;
+    color: white;
+    border-radius: 50%;
   }
-  &__whenDelivery--decrement {
-    border: none;
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-    background: none;
-    cursor: pointer;
+  .placingAnOrder__whenDelivery--decrement {
+    padding-bottom: 25px;
   }
 
   &__whenDelivery--connection {
@@ -526,5 +456,17 @@
     border: none;
     color: white;
     margin-left: 50px;
+  }
+  &__footer--checkbox {
+    background: none;
+    border: none;
+  }
+  &__footer--checkboxx {
+    margin-right: 10px;
+    transform: scale(1.5);
+    margin-left: 25px;
+    position: relative;
+    top: 1px;
+    accent-color: green;
   }
 }

@@ -1,0 +1,19 @@
+.MenuPage {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px;
+    
+  
+
+  &__Button {
+    width: 511px;
+    height: 71px;
+    font-family: Open Sans;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38.13px;
+    letter-spacing: 0.03em;
+  }
+}

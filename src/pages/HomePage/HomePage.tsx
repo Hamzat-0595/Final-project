@@ -1,27 +1,21 @@
 import "./HomePage.scss";
 
 import Establishments from "./Establishments/Establishments";
-import OrderWindow from "./OrderWindow/OrderWindow";
-
-import Footer from "../../layout/Footer/Footer";
-
-import Header from "../../layout/Header/Header";
+import { useFetchAllCategorysQuery } from "../../store/services/productService";
+import Category from "./Category/Category";
 
 const HomePage = () => {
+  const { data: categorys } = useFetchAllCategorysQuery("");
+  console.log({
+    categorys,
+  });
+
   return (
     <div className="HomePage">
-      <Header />
       <Establishments />
-      <OrderWindow title="Пиццы" />
-      <OrderWindow title="Соки" />
-      <OrderWindow title="Бургеры" />
-      <OrderWindow title="Гарниры" />
-      <div className="HomePage__Wrapper">
-        <button className="HomePage__ShowMore">
-          Показать больше категорий
-        </button>
-      </div>
-      <Footer />
+      {categorys?.map((category) => (
+        <Category {...category} />
+      ))}
     </div>
   );
 };
