@@ -5,16 +5,26 @@ import img from "../../assets/Profile.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/hooks";
+import { logout } from "../../store/user/logaut";
 
 const Header = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const cartQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const navigate = useNavigate(); // Используем хук useNavigate
+  const dispatch = useAppDispatch();
 
   const handleBasketClick = () => {
     navigate("/BasketPage"); // Переход на страницу корзины
   };
+
+
+  const logoutClick = async () => {
+    await dispatch(logout());
+    navigate("/signin");
+  };
+
   return (
     <div className="Header">
       <div className="Header__Name-input">
@@ -37,7 +47,9 @@ const Header = () => {
         </div>
         <div className="Header__Log_in-Basket">
           <div className="Header__Log_in-devider" />
-          <div className="Header__Log-in">Войти</div>
+          <button className="Header__Log-in" onClick={logoutClick}>
+            Выйти
+          </button>
           <button className="Header__basket" onClick={handleBasketClick}>
             <div className="Header__clear">Корзина</div>
             <div className="Header__counter-devider" />

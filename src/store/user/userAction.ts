@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { baseService } from "../../api/baseService";
 import { OrderForm, RegisterRequest, User } from "../../types/types";
+import { baseService, setToken } from "../../api/baseService";
 import Cookies from "js-cookie";
+import { AxiosError } from "axios";
 
 interface IUserAuth extends User {
   token: string;
@@ -36,8 +37,29 @@ export const authUser = createAsyncThunk(
   "user/authUser",
   async (user: { mail: string; password: string }) => {
     const response = await baseService.post<IUserAuth>("/signin", user);
-    Cookies.set("token", response.data.token, { expires: 7, path: "/", secure: true ,sameSite: "Strict"});
+    Cookies.set("token", response.data.token, {
+      expires: 7,
+      path: "/",
+      secure: true,
+      sameSite: "Strict",
+    });
 
     return response.data;
+  }
+);
+
+export const checkAuthUser = createAsyncThunk(
+  "user/checkAuthUser",
+  async (_, { rejectWithValue }) => {
+    try {
+      setToken();
+      const response = await baseService.get<IUserAuth>("/cafe/profile/user");
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        (error as AxiosError).response?.data || "Error checking auth"
+      );
+    }
   }
 );

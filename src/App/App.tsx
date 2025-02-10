@@ -1,12 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 
 import HomePage from "../pages/HomePage/HomePage";
-import ProductPage from "../pages/ProductPage/ProductPage";
 import "./App.scss";
 
+import HomePage from "../pages/HomePage/HomePage";
 import LogIn from "../pages/Autorization/login/LogIn";
 import OrderListPage from "../pages/OrderListPage/OrderListPage";
-
 import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
 import PlacingAnOrderPage from "../pages/PlacingAnOrder/PlacingAnOrder";
 import BasketPage from "../pages/BasketPage/BasketPage";
@@ -15,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
+import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
 
 function App() {
   return (
@@ -54,7 +54,7 @@ function App() {
                 <MenuPage />
                 // </ProtectedRoute>
               }
-            />
+              />
           </Route>
           <Route
             path="/client/signup"
