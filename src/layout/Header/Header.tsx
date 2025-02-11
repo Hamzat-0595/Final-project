@@ -2,8 +2,19 @@ import "./Heder.scss";
 import search from "../../assets/Search.png";
 import cool from "../../assets/Calling.png";
 import img from "../../assets/Profile.png";
+import { useAppDispatch } from "../../hooks/hooks";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../store/user/logaut";
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const logoutClick = async () => {
+    await dispatch(logout());
+    navigate("/signin");
+  };
+
   return (
     <div className="Header">
       <div className="Header__Name-input">
@@ -25,11 +36,13 @@ const Header = () => {
           <img className="Header__Person-img" src={img} />
         </div>
         <div className="Header__Log_in-Basket">
-          <div className="Header__Log_in-devider"/>
-          <div className="Header__Log-in">Войти</div>
+          <div className="Header__Log_in-devider" />
+          <button className="Header__Log-in" onClick={logoutClick}>
+            Выйти
+          </button>
           <button className="Header__basket">
             <div className="Header__clear">Корзина</div>
-            <div className="Header__counter-devider"/>
+            <div className="Header__counter-devider" />
             <div className="Header__Counter-bloc"></div>
             <div className="Header__counter">4</div>
           </button>

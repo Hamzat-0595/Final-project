@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 
-import HomePage from "../pages/HomePage/HomePage";
 import "./App.scss";
 
+import HomePage from "../pages/HomePage/HomePage";
 import LogIn from "../pages/Autorization/login/LogIn";
 import OrderListPage from "../pages/OrderListPage/OrderListPage";
-
 import AutorizationPage from "../pages/Autorization/AutorizationUser/AutorizationPage";
 import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
