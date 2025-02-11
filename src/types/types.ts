@@ -1,3 +1,8 @@
+import {
+  DeliveryTypes,
+  PayTypes,
+} from "../pages/PlacingAnOrder/PlacingAnOrder";
+
 export type User = {
   _id: string;
   name: string;
@@ -39,6 +44,24 @@ export enum RegisterRequestCredentials {
   mail = "mail",
   password = "password",
 }
+export interface OrderForm {
+  name: string;
+  phone: string;
+  deliveryType: DeliveryTypes;
+  restaurant?: string; // Опциональное поле, если выбран самовывоз
+  street?: string;
+  houseNumber?: string;
+  flatNumber?: string;
+  entrance?: string;
+  floor?: string;
+  comment?: string;
+  payType: PayTypes;
+  deliveryTime: DeliveryTypes;
+  specifiedTime?: string; // Опциональное поле, если выбрано "Ко времени"
+  personCount: number;
+  callback: "no" | "yes"; // Поле для обратного звонка
+  isAgreed: boolean;
+}
 
 export type RegisterRequest = {
   [RegisterRequestCredentials.name]: string;
@@ -48,3 +71,14 @@ export type RegisterRequest = {
   [RegisterRequestCredentials.mail]: string;
   [RegisterRequestCredentials.password]: string;
 };
+
+export interface CartItem {
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+  info: string;
+}
+export interface CartState {
+  items: CartItem[];
+}

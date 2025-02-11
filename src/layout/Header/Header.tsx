@@ -2,13 +2,23 @@ import "./Heder.scss";
 import search from "../../assets/Search.png";
 import cool from "../../assets/Calling.png";
 import img from "../../assets/Profile.png";
-import { useAppDispatch } from "../../hooks/hooks";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/hooks";
 import { logout } from "../../store/user/logaut";
 
 const Header = () => {
+  const cart = useSelector((state: RootState) => state.cart.items);
+  const cartQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const navigate = useNavigate(); // Используем хук useNavigate
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+
+  const handleBasketClick = () => {
+    navigate("/BasketPage"); // Переход на страницу корзины
+  };
+
 
   const logoutClick = async () => {
     await dispatch(logout());
@@ -40,11 +50,11 @@ const Header = () => {
           <button className="Header__Log-in" onClick={logoutClick}>
             Выйти
           </button>
-          <button className="Header__basket">
+          <button className="Header__basket" onClick={handleBasketClick}>
             <div className="Header__clear">Корзина</div>
             <div className="Header__counter-devider" />
             <div className="Header__Counter-bloc"></div>
-            <div className="Header__counter">4</div>
+            <div className="Header__counter">{cartQuantity}</div>
           </button>
         </div>
       </div>

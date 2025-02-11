@@ -1,0 +1,154 @@
+.productPage {
+  width: 1440px;
+
+  h1 {
+    color: white;
+    font-family: "Gilroy-Bold", sans-serif;
+    width: 129px;
+    height: 19px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.09px;
+  }
+
+  &__btn {
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: red($color: #000000);
+    border-right: red($color: #000000);
+    transform: rotate(-45deg);
+    width: 10px;
+    height: 10px;
+    background: rgba(97, 137, 103, 1);
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-top: 122px;
+    margin-bottom: 27px;
+  }
+  &__at--btn {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: rgba(97, 137, 103, 1);
+    margin-right: 19px;
+  }
+
+  &__container {
+    max-width: 1210px;
+    margin: 0 auto;
+  }
+
+  &__product {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+    border-radius: 10px;
+  }
+
+  &__img {
+    width: 599px;
+    border-radius: 10px 0 0 10px;
+    height: 399px;
+  }
+  &__data {
+    width: 621px;
+    height: 399px;
+  }
+  h2 {
+    font-family: "Gilroy-Bold", sans-serif;
+    color: white;
+  }
+  h4 {
+    color: rgba(207, 207, 207, 1);
+    margin-top: 5px;
+    margin-bottom: 113px;
+  }
+  h3 {
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 22px;
+  }
+  &__inBascet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 137px;
+    height: 44px;
+    top: 323px;
+    left: 172px;
+    border-radius: 10px;
+    background-color: #618967;
+    color: #ffffff;
+    font-family: Gilroy;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.7px;
+    padding: 0 16px 0 19px;
+    border: none;
+    margin-right: 25px;
+  }
+  &__inBascet--line {
+    width: 0px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  &__in {
+    display: flex;
+  }
+  &__bju {
+    color: white;
+    font-family: Gilroy;
+    gap: 50px;
+    display: flex;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 13.84px;
+    margin-top: 30px;
+    height: 14px;
+  }
+  &__border--line {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  &__weight {
+    color: white;
+    font-family: Gilroy;
+    gap: 61px;
+    display: flex;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 13.84px;
+    height: 14px;
+  }
+  &__border {
+    border: 1px solid;
+
+    border-image-source: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+  }
+  &__line {
+    width: 4px;
+    height: 33px;
+    background: rgba(97, 137, 103, 1);
+    margin-right: 19px;
+  }
+  &__footer--text {
+    color: white;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-family: Gilroy;
+    font-size: 32px;
+    line-height: 38.69px;
+  }
+}

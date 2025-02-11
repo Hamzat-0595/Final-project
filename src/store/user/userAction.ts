@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { OrderForm, RegisterRequest, User } from "../../types/types";
 import { baseService, setToken } from "../../api/baseService";
-import { RegisterRequest, User } from "../../types/types";
 import Cookies from "js-cookie";
 import { AxiosError } from "axios";
 
@@ -19,12 +19,31 @@ export const registerClient = createAsyncThunk<string, RegisterRequest>(
     }
   }
 );
+export const order = createAsyncThunk<string, OrderForm>(
+  "post/orders",
+  async (user, { rejectWithValue }) => {
+    try {
+      const response = await baseService.post("/orders", user);
+      return response.data;
+    } catch (error) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
+    }
+  }
+);
 
 export const authUser = createAsyncThunk(
   "user/authUser",
   async (user: { mail: string; password: string }) => {
     const response = await baseService.post<IUserAuth>("/signin", user);
-    Cookies.set("token", response.data.token);
+    Cookies.set("token", response.data.token, {
+      expires: 7,
+      path: "/",
+      secure: true,
+      sameSite: "Strict",
+    });
+
     return response.data;
   }
 );

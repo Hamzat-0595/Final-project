@@ -4,14 +4,16 @@ import {
   combineReducers,
   configureStore,
 } from "@reduxjs/toolkit";
-
+import cartReducer from "../store/services/cartBasket/cartSlice";
 import { productAPI } from "./services/productService";
 import userSlice from "./user/userSlice";
 
 const rootReducer = combineReducers({
   user: userSlice,
+  cart: cartReducer,
   [productAPI.reducerPath]: productAPI.reducer,
 });
+
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,

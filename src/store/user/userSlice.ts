@@ -37,6 +37,9 @@ export const userSlice = createSlice({
       .addCase(registerClient.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
+        toast.error(action.error.message, {
+          autoClose: 3000,
+        });
       })
       .addCase(authUser.fulfilled, (state, action) => {
         state.isLoading = false;

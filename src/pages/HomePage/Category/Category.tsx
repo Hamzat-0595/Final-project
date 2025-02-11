@@ -18,7 +18,7 @@ const Category = ({ name, _id }: ICategory) => {
       </div>
       <div className="Category__wrapper">
         {products.map((product) => (
-          <ProductCard {...product} />
+          <ProductCard key={product._id} {...product} />
         ))}
       </div>
     </div>
