@@ -12,10 +12,7 @@ const Establishments = () => {
           Топ заведений по отзывам
         </div>
         <div className="Establishments__wrapperImg">
-          <img src={Rectangle} alt="" className="Establishments__Img" />
-          <img src={Rectangle} alt="" className="Establishments__Img" />
-          <img src={Rectangle} alt="" className="Establishments__Img" />
-          <img src={Rectangle} alt="" className="Establishments__Img" />
+          
         </div>
         <div className="Establishments__wrapperBtn">
           <Button className="Establishments__btnMore">Показать больше</Button>

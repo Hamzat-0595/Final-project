@@ -4,8 +4,9 @@ import Input, { InputVariants } from "../../components/input/input";
 import "./PlacingAnOrder.scss";
 import { useState } from "react";
 import { OrderForm } from "../../types/types";
-import { useAppDispatch } from "../../hooks/hooks";
-import { order } from "../../store/user/userAction";
+import { usePostOrderMutation } from "../../store/services/productService";
+import { useAppSelector } from "../../hooks/hooks";
+
 // множества типов buttons
 export enum DeliveryTypes {
   "pickup" = "pickup",
@@ -24,11 +25,33 @@ export enum PayTypes {
 
 //изменение button bakcgraund
 const PlacingAnOrder = () => {
-  const dispatch = useAppDispatch();
-  const handleClick = () => {
-    dispatch(order(formData));
+  const [postOrder] = usePostOrderMutation();
+  const navigate = useNavigate();
+
+  const { items: foods } = useAppSelector((state) => state.cart);
+
+  const handleClick = async () => {
+    const { street = "", houseNumber = "", flatNumber } = formData;
+    const { cafeId } = foods[0];
+    const total = foods.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    try {
+      await postOrder({
+        cafeId,
+        foods,
+        from: "Ресторан",
+        to: street + houseNumber + flatNumber,
+        total,
+        clientId: "user._id",
+      });
+      navigate("/account/orders");
+    } catch (error) {
+      console.error("Ошибка при размещении заказа:", error);
+    }
   };
-  const navigate = useNavigate(); // Используем хук useNavigate
   const [deliveryType, setDeliveryType] = useState<DeliveryTypes>(
     DeliveryTypes.delivery
   );
@@ -375,7 +398,9 @@ const PlacingAnOrder = () => {
                 className="placingAnOrder__footer--checkboxx"
                 type="checkbox"
                 checked={isAgreed}
-                onChange={() => {}}
+                onChange={(event) =>
+                  setFormData({ ...formData, isAgreed: event.target.checked })
+                }
               />
             </button>
             <span>

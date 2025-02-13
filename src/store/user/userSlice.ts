@@ -43,7 +43,6 @@ export const userSlice = createSlice({
       })
       .addCase(authUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.user = action.payload;
         state.isAuth = true;
         state.token = action.payload.token;
       });

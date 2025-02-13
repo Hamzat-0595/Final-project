@@ -21,7 +21,7 @@ const ProtectedRoute = ({ children }: IProtectedRoute) => {
       navigate("/signin");
     }
     dispatch(checkAuthUser());
-  }, [dispatch]);
+  }, [dispatch, isAuth]);
 
   if (isLoading) {
     return null;
