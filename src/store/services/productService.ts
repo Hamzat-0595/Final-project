@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ICategory, IProduct } from "../../models/IProduct";
+import { ICafe, ICategory, IProduct } from "../../models/IProduct";
 import { RootState } from "../store";
 import { Orders, SetOrderRequest } from "../../types/types";
 
@@ -41,6 +41,11 @@ export const productAPI = createApi({
       }),
       invalidatesTags: ["ORDERS"],
     }),
+    fetchAllCafe: build.query<ICafe[], unknown>({
+      query: () => ({
+        url: "/cafe",
+      }),
+    }),
   }),
 });
 
@@ -49,4 +54,5 @@ export const {
   useFetchAllCategorysQuery,
   useFetchOrdersQuery,
   usePostOrderMutation,
+  useFetchAllCafeQuery,
 } = productAPI;
