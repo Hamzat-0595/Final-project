@@ -13,7 +13,6 @@ import ProtectedRoute from "./ProtectedRoute";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
-import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
 import ProductPage from "../pages/ProductPage/ProductPage";
 
 function App() {
@@ -23,9 +22,30 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductPage />} />
-          <Route path="/basketPage" element={<BasketPage />} />
-          <Route path="/delivery" element={<Delivery />} />
-          <Route path="/placingAnOrder" element={<PlacingAnOrderPage />} />
+          <Route
+            path="/basketPage"
+            element={
+              <ProtectedRoute>
+                <BasketPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/delivery"
+            element={
+              <ProtectedRoute>
+                <Delivery />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/placingAnOrder"
+            element={
+              <ProtectedRoute>
+                <PlacingAnOrderPage />
+              </ProtectedRoute>
+            }
+          />
 
           <Route path="/" element={<Layout />}>
             <Route
@@ -42,19 +62,19 @@ function App() {
             <Route
               path="orders"
               element={
-                // <ProtectedRoute>
-                <OrderListPage />
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <OrderListPage />
+                </ProtectedRoute>
               }
             />
             <Route
               path="menu"
               element={
-                // <ProtectedRoute>
-                <MenuPage />
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <MenuPage />
+                </ProtectedRoute>
               }
-              />
+            />
           </Route>
           <Route
             path="/client/signup"
