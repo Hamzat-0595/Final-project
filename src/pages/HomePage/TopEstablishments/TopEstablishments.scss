@@ -1,11 +1,8 @@
-.Establishments {
+.TopEstablishments {
   width: 1440px;
-  // background-color: #494544;
-
   &__container {
     border-bottom: 1px solid #ffffff33;
   }
-
   &__border {
     max-width: 12px;
     max-height: 4px;
@@ -29,21 +26,19 @@
     display: flex;
     justify-content: center;
   }
-
   &__Img {
     width: 329px;
     height: 220px;
     margin-left: 8px;
     margin-right: 8px;
+    
   }
-
   &__wrapperBtn {
     display: flex;
     justify-content: center;
     margin-top: 40px;
     padding-bottom: 48px;
   }
-
   &__btnMore {
     width: 720px;
     height: 59px;
