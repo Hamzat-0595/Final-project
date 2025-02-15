@@ -1,8 +1,8 @@
 import "./HomePage.scss";
 
-import Establishments from "./Establishments/Establishments";
 import { useFetchAllCategorysQuery } from "../../store/services/productService";
 import Category from "./Category/Category";
+import TopEstablishments from "./TopEstablishments/TopEstablishments";
 
 const HomePage = () => {
   const { data: categorys } = useFetchAllCategorysQuery("");
@@ -12,7 +12,7 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <Establishments />
+      <TopEstablishments />
       {categorys?.map((category) => (
         <Category {...category} />
       ))}

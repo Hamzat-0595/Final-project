@@ -25,3 +25,16 @@ export interface ICategory {
   name: string;
   __v: number;
 }
+export interface ICafe {
+  _id: string;
+  name: string;
+  image: string;
+  phone: number;
+  city: number;
+  address: string;
+  mail: string;
+  password: string;
+  role: string;
+  menu: [];
+  __v: number;
+}

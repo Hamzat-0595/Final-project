@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ICategory, IProduct } from "../../models/IProduct";
+import { ICafe, ICategory, IProduct } from "../../models/IProduct";
 import { RootState } from "../store";
+import { Orders, SetOrderRequest } from "../../types/types";
 
 export const productAPI = createApi({
   reducerPath: "productAPI",
@@ -16,13 +17,19 @@ export const productAPI = createApi({
       return headers;
     },
   }),
-  tagTypes: ["food"],
+  tagTypes: ["ORDERS", "food"],
   endpoints: (build) => ({
     fetchAllProducts: build.query<IProduct[], string | unknown>({
       query: (categoryId) => ({
         url: `/food${categoryId ? `/category/${categoryId}` : ""}`,
       }),
-      providesTags: ["food"],
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ _id }) => ({ type: "food" as const, _id })),
+              "food",
+            ]
+          : ["food"],
     }),
     fetchAllCategorys: build.query<ICategory[], unknown>({
       query: () => ({
@@ -37,8 +44,29 @@ export const productAPI = createApi({
       }),
       invalidatesTags: ["food"],
     }),
+    fetchOrders: build.query<Orders[], void>({
+      query: () => "orders",
+    }),
+    postOrder: build.mutation<string, SetOrderRequest>({
+      query: (Orders) => ({
+        url: "/orders",
+        method: "POST",
+        body: Orders,
+      }),
+      invalidatesTags: ["ORDERS"],
+    }),
+    fetchAllCafe: build.query<ICafe[], unknown>({
+      query: () => ({
+        url: "/cafe",
+      }),
+    }),
   }),
 });
 
-export const { useFetchAllProductsQuery, useFetchAllCategorysQuery, usePostProductMutation } =
-  productAPI;
+export const {
+  useFetchAllProductsQuery,
+  useFetchAllCategorysQuery,
+  useFetchOrdersQuery,
+  usePostOrderMutation,
+  useFetchAllCafeQuery,
+} = productAPI;
