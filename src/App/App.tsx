@@ -14,6 +14,7 @@ import MenuPage from "../pages/MenuPage/MenuPage";
 import Layout from "../layout/Layout";
 import AccountLayout from "../layout/AccountLayout/AccountLayout";
 import ProductPage from "../pages/ProductPage/ProductPage";
+import AccountnIformation from "../pages/AccountnIformation/AccountnIformation";
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="information" element={<AccountnIformation />} />
           </Route>
           <Route
             path="/client/signup"
