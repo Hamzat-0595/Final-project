@@ -16,19 +16,29 @@ export const productAPI = createApi({
       return headers;
     },
   }),
+  tagTypes: ["food"],
   endpoints: (build) => ({
     fetchAllProducts: build.query<IProduct[], string | unknown>({
       query: (categoryId) => ({
         url: `/food${categoryId ? `/category/${categoryId}` : ""}`,
       }),
+      providesTags: ["food"],
     }),
     fetchAllCategorys: build.query<ICategory[], unknown>({
       query: () => ({
         url: "/categories",
       }),
     }),
+    postProduct: build.mutation<unknown, FormData>({
+      query: (product) => ({
+        url: "/food",
+        method: "POST",
+        body: product,
+      }),
+      invalidatesTags: ["food"],
+    }),
   }),
 });
 
-export const { useFetchAllProductsQuery, useFetchAllCategorysQuery } =
+export const { useFetchAllProductsQuery, useFetchAllCategorysQuery, usePostProductMutation } =
   productAPI;

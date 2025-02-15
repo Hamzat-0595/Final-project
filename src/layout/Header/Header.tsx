@@ -4,10 +4,10 @@ import cool from "../../assets/Calling.png";
 import img from "../../assets/Profile.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/hooks";
 import { logout } from "../../store/user/logaut";
-
+import { Button, ButtonTypes, ButtonVariables } from "../../components/Button/Button";
 const Header = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const cartQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="Header__Name-input">
-        <div className="Header__Name">LOGOS</div>
+        <Button buttonType={ButtonTypes.link} variant={ButtonVariables.text} to={'/'} className='Header__Name'>LOGOS</Button>
         <div className="Header__input-img">
           <input className="Header__input" type="text" placeholder="Search" />
           <img className="Header__search" src={search} />
