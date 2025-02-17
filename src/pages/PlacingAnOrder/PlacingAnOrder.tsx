@@ -32,7 +32,7 @@ const PlacingAnOrder = () => {
 
   const handleClick = async () => {
     const { street = "", houseNumber = "", flatNumber } = formData;
-    const { cafeId } = foods[0];
+    const { cafeId } = foods[0] || {};
     const total = foods.reduce(
       (sum, item) => sum + item.price * item.quantity,
       0
