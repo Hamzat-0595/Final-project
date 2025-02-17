@@ -69,4 +69,5 @@ export const {
   useFetchOrdersQuery,
   usePostOrderMutation,
   useFetchAllCafeQuery,
+  usePostProductMutation,
 } = productAPI;

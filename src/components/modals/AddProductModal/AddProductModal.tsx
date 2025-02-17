@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "../../Button/Button";
 import Input from "../../input/input";
 import "./AddProductModal.scss";
-import { baseURL } from "../../../api/baseService";
 import { useFetchAllCategorysQuery, usePostProductMutation } from "../../../store/services/productService";
 import { toast } from "react-toastify";
 
@@ -17,7 +16,7 @@ const AddProductModal = ({ toggleModalActive }: IAddProductModalProps) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, ] = useState("");
   const [price, setPrice] = useState("");
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -70,7 +69,7 @@ const AddProductModal = ({ toggleModalActive }: IAddProductModalProps) => {
             onChange={handleChange}
             accept="image/*,.png,.jpg,.web"
           />
-        </div>
+        </div> 
         <div className="AddProductModal__input-wrapper">
           <div className="AddProductModal__">3.Состав</div>
           <Input className="AddProductModal__input" onChange={e => setProductDescription(e.target.value)} />
