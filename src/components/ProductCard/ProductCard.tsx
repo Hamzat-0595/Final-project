@@ -57,8 +57,8 @@ const ProductCard = ({
               <div className="ProductCard__wrapperOrdener">
                 <div className="ProductCard__price">{price} ₽</div>
                 <Button
-                  className="ProductCard__inBascet"
                   onClick={handleAddToCart}
+                  className="ProductCard__inBascet"
                 >
                   <div className="ProductCard__bascetText">В корзину</div>
                   <img className="ProductCard__bascet" src={Bascet} />

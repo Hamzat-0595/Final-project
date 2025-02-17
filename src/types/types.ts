@@ -1,4 +1,6 @@
+import { IFood } from "../models/IProduct";
 import {
+  DeliveryTimes,
   DeliveryTypes,
   PayTypes,
 } from "../pages/PlacingAnOrder/PlacingAnOrder";
@@ -56,11 +58,30 @@ export interface OrderForm {
   floor?: string;
   comment?: string;
   payType: PayTypes;
-  deliveryTime: DeliveryTypes;
+  deliveryTime: DeliveryTimes;
   specifiedTime?: string; // Опциональное поле, если выбрано "Ко времени"
   personCount: number;
   callback: "no" | "yes"; // Поле для обратного звонка
   isAgreed: boolean;
+}
+export interface SetOrderRequest {
+  foods: IFood[];
+  cafeId: string;
+  clientId: string;
+  total: number;
+  from: string;
+  to: string;
+}
+export interface Orders {
+  _id: number;
+  foods: [];
+  cafeId: string;
+  clientId: string;
+  total: number;
+  from: string;
+  to: string;
+  status: string;
+  __v: number;
 }
 
 export type RegisterRequest = {
@@ -72,12 +93,8 @@ export type RegisterRequest = {
   [RegisterRequestCredentials.password]: string;
 };
 
-export interface CartItem {
-  name: string;
-  price: number;
+export interface CartItem extends IFood {
   quantity: number;
-  image: string;
-  info: string;
 }
 export interface CartState {
   items: CartItem[];
