@@ -14,8 +14,8 @@
   &__btn {
     border-left: 2px solid white;
     border-top: 2px solid white;
-    border-bottom: red($color: #000000);
-    border-right: red($color: #000000);
+    // border-bottom: red($color: #000000);
+    // border-right: red($color: #000000 );
     transform: rotate(-45deg);
     width: 10px;
     height: 10px;

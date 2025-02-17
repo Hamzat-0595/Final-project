@@ -7,6 +7,7 @@ import { RootState } from "../../store/store";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/hooks";
 import { logout } from "../../store/user/logaut";
+import { Button, ButtonVariables } from "../../components/Button/Button";
 
 const Header = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -18,7 +19,6 @@ const Header = () => {
   const handleBasketClick = () => {
     navigate("/BasketPage"); // Переход на страницу корзины
   };
-
 
   const logoutClick = async () => {
     await dispatch(logout());
@@ -47,9 +47,13 @@ const Header = () => {
         </div>
         <div className="Header__Log_in-Basket">
           <div className="Header__Log_in-devider" />
-          <button className="Header__Log-in" onClick={logoutClick}>
+          <Button
+            className="Header__Log-in"
+            onClick={logoutClick}
+            variant={ButtonVariables.text}
+          >
             Выйти
-          </button>
+          </Button>
           <button className="Header__basket" onClick={handleBasketClick}>
             <div className="Header__clear">Корзина</div>
             <div className="Header__counter-devider" />

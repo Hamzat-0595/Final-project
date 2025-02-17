@@ -6,9 +6,6 @@ import Category from "./Category/Category";
 
 const HomePage = () => {
   const { data: categorys } = useFetchAllCategorysQuery("");
-  console.log({
-    categorys,
-  });
 
   return (
     <div className="HomePage">
