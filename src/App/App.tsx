@@ -76,7 +76,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="information" element={<AccountnIformation />} />
+            <Route
+              path="information"
+              element={
+                // <ProtectedRoute>
+                <AccountnIformation />
+                // </ProtectedRoute>
+              }
+              />
           </Route>
           <Route
             path="/client/signup"

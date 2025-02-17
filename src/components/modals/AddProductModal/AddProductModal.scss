@@ -38,6 +38,7 @@
     position: absolute;
     right: 15px;
     top: 0px;
+    font-size: 26px;
   }
 
   &__form {
@@ -58,12 +59,11 @@
     width: 382px;
     padding: 15px;
     border-radius: 15px;
-    
   }
 
-  &__select{
-    background: #3D3938;
-color: #ffffff;
+  &__select {
+    background: #3d3938;
+    color: #ffffff;
   }
 
   &__add {

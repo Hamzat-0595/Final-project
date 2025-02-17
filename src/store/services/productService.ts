@@ -17,18 +17,32 @@ export const productAPI = createApi({
       return headers;
     },
   }),
-  tagTypes: ["ORDERS"],
+  tagTypes: ["ORDERS", "food"],
   endpoints: (build) => ({
     fetchAllProducts: build.query<IProduct[], string | unknown>({
       query: (categoryId) => ({
         url: `/food${categoryId ? `/category/${categoryId}` : ""}`,
       }),
-      providesTags: () => ["ORDERS"],
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ _id }) => ({ type: "food" as const, _id })),
+              "food",
+            ]
+          : ["food"],
     }),
     fetchAllCategorys: build.query<ICategory[], unknown>({
       query: () => ({
         url: "/categories",
       }),
+    }),
+    postProduct: build.mutation<unknown, FormData>({
+      query: (product) => ({
+        url: "/food",
+        method: "POST",
+        body: product,
+      }),
+      invalidatesTags: ["food"],
     }),
     fetchOrders: build.query<Orders[], void>({
       query: () => "orders",
@@ -55,4 +69,5 @@ export const {
   useFetchOrdersQuery,
   usePostOrderMutation,
   useFetchAllCafeQuery,
+  usePostProductMutation,
 } = productAPI;

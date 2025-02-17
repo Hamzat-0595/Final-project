@@ -19,6 +19,7 @@ export interface ButtonProps
   buttonType?: ButtonTypes;
   variant?: ButtonVariables;
   activeVariant?: ButtonVariables;
+  activeClassName?: string;
 }
 
 export interface LinkButtonProps extends NavLinkProps {
@@ -27,6 +28,7 @@ export interface LinkButtonProps extends NavLinkProps {
   to: To;
   children: ReactNode;
   activeVariant?: ButtonVariables;
+  activeClassName?: string;
 }
 
 export const Button: React.FC<LinkButtonProps | ButtonProps> = (props) => {
@@ -35,6 +37,7 @@ export const Button: React.FC<LinkButtonProps | ButtonProps> = (props) => {
     buttonType = ButtonTypes.button,
     variant = ButtonVariables.filled,
     className,
+    activeClassName,
     activeVariant,
     ...rest
   } = props;
@@ -44,7 +47,7 @@ export const Button: React.FC<LinkButtonProps | ButtonProps> = (props) => {
     return (
       <NavLink
         className={({ isActive }) =>
-          `CustomButton ${!isActive ? activeVariant : variant} ${className}`
+          `CustomButton ${!isActive ? activeVariant : variant} ${className} ${isActive ? activeClassName : ''}`
         }
         {...linkProps}
       >
